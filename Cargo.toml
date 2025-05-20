@@ -1,0 +1,15 @@
+[package]
+name = "chip_8_interpreter"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+config = "0.15.11"
+lerp = "0.5.0"
+rand = "0.9.1"
+sdl2 = "0.37.0"
+serde = { version = "1.0.219", features = ["derive"] }
+terminal-menu = "3.0.0"
+toml = { version = "0.8.22", features = ["preserve_order"]}
+

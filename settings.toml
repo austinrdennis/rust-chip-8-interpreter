@@ -1,0 +1,40 @@
+[chip8]
+# These quirk settings affect the behavior of certain ambiguous operations. If your program doesn't
+# work the same as another interpreter, experiment with these options.
+shift_quirk = false
+or_and_xor_quirk = true
+mem_quirk = true
+sprite_wrapping_quirk = true
+jump_offset_quirk = false
+# This is multiplied by how many µsec each operation takes. Larger is slower, but don't make it too
+# large or the drawing function will break. This is for fine tuning only. Setting this to 0 makes
+# the interpreter run as fast as possible.
+execution_speed_multiple = 1.0
+# Starting Chip-8 VM memory address to load the font at. Don't touch this unless a program's
+# documentation tells you it expects to find the font at a specific memory location.
+font_memory_starting_location = 0x050
+# This is the path to the folder that holds all your programs. It's relative to the root directory
+# of the project. By default, it expects you to place your programs in: [project root directory]/programs
+program_folder_path = "programs"
+
+[window]
+# Window resolution (Default fits on an 1024 by 768 display)
+width = 768
+height = 384
+fullscreen = false
+# Color options for the screen in RGB format.
+background_color = [0, 0, 0]
+foreground_color = [255, 255, 255]
+# The pixel fade parameters are in place to reduce sprite motion flickering on non-CRT displays. If
+# you play on a CRT, turn this off as it does have some artifacts and provides no benefits. The fade
+# delay time can be fine tuned to your preference. The more delay added, the more artifacts are
+# introduced, but the less flickering happens. Something between 75 and 200 µsec works best.
+sprite_flicker_filter = true
+pixel_fade_micros = 100
+
+[sound]
+# Tone played the buzzer in Hz.
+tone = 330.0
+# Must be a float. I don't recommend going much higher than 1.0 and if you do, go in very small
+# increments. Particularly if you're wearing headphones.
+volume = 0.5
